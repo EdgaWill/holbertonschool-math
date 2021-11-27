@@ -13,4 +13,6 @@ typedef struct cell
 
 void push(t_cell **head_ref, double x);
 t_cell *heron(double p, double x0);
+void push(t_cell **head_ref, double new_data);
+double gold_number(t_cell *head);   
 #endif
