@@ -1,8 +1,4 @@
-typedef struct cell
-{
-	double elt;
-	struct cell *next;
-} t_cell;
+#include "heron.h"
 
 void push(t_cell **head_ref, double x)
 {
