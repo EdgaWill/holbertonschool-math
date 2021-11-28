@@ -8,10 +8,10 @@
  */
 void complex_from_mod_arg(double m, double arg, complex *c3)
 {
-	double x, y;
+	double a, b;
 
-	x = sin(arg) * m;
-	y = cos(arg) * m;
-	c3->re = y;
-	c3->im = x;
+	a = sin(arg) * m;
+	b = cos(arg) * m;
+	c3->re = b;
+	c3->im = a;
 }
