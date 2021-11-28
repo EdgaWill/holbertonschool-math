@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef HERON_H
+#define HERON_H
 
 #include <stdio.h>
 #include <math.h>
