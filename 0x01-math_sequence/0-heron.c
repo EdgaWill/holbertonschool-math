@@ -1,43 +1,38 @@
 #include "heron.h"
 
-void push(t_cell **head_ref, double x)
-{
-	t_cell *new_node = malloc(sizeof(t_cell));
-
-	if (new_node == NULL)
-	{
-		free(new_node);
-		return;
-	}
-
-	new_node->elt  = x;
-
-	new_node->next = (*head_ref);
-
-	(*head_ref)    = new_node;
-}
-
+/**
+ * heron - function that return the Heron sequence until
+ * having convergence with an error less or equal
+ * @p: double
+ * @x0: double
+ *
+ * Return: single linked list;
+ */
 t_cell *heron(double p, double x0)
 {
-	t_cell *h;
-	double error = 1 / 10000000;
-	double x = x0;
+	double a = 0, _error = 0;
 
-	h = malloc(sizeof(t_cell));
+	t_cell *head = NULL, *new = NULL, *tail;
 
-	if (h == NULL)
+	new = malloc(sizeof(t_cell));
+	if (!new)
 		return (NULL);
+	a = x0;
 
-	h->elt = x;
+	head = new;
+	new->elt = a;
+	new->next = NULL;
+	_error = ((a * a) - p);
+	_error = (_error >= 0) ? _error : -(_error);
+	if (_error <= 0.0000001)
+	return (head);
 
-	while (fabs(p - (x * x)) > error)
-	{
-		if (x != x0)
-			push(&h, x);
+	a = (0.5) * (x0 + (p / x0));
+	head = heron(p, a);
+	tail = head;
+	while (tail->next)
+		tail = tail->next;
+	tail->next = new;
 
-		x = 0.5 * (x + p / x);
-
-	}
-
-	return (h);
+	return (head);
 }
