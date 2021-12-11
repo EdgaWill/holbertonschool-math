@@ -26,7 +26,7 @@ t_cell *Fibonnaci()
 	t_cell *head = NULL, *new;
 	int ab = 0, ac = 1, cd = 0, de = 20;
 
-	while (lim)
+	while (de)
 	{
 		ab = ac + cd;
 
