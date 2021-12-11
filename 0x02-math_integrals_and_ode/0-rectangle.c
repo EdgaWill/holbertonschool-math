@@ -20,11 +20,8 @@ double rectangle_method(double a, double b, int steps)
 
 	for (x = 1; x <= steps; x++)
 	{
-		/* in terms of width */
 		cd = 1 / (1 + (o * o));
-		/* of all areas */
 		su += ab * cd;
-		/* change in width */
 		o += ab;
 	}
 	return (su);
