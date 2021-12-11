@@ -11,21 +11,21 @@
 
 double rectangle_method(double a, double b, int steps)
 {
-	int i;
-	double width, height, sum, w;
+	int x;
+	double ab, cd, su, o;
 
-	width = (b - a) / steps;
-	sum = 0.0;
-	w = a;
+	ab = (b - a) / steps;
+	su = 0.0;
+	o = a;
 
-	for (i = 1; i <= steps; i++)
+	for (x = 1; x <= steps; x++)
 	{
 		/* in terms of width */
-		height = 1 / (1 + (w * w));
+		cd = 1 / (1 + (o * o));
 		/* of all areas */
-		sum += width * height;
+		su += ab * cd;
 		/* change in width */
-		w += width;
+		o += ab;
 	}
-	return (sum);
+	return (su);
 }
