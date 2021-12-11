@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define f(x) (1 / (1 + x * x))
 /**
- * simpson - simpson_method
+ * simpson - the Simpson Method and use it to calculate
  * @a: double
  * @b: double
  * @steps: int
