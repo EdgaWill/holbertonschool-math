@@ -8,12 +8,12 @@
  */
 double gold_number(t_cell *head)
 {
-	double ab, ac;
+	double f_c, f_b;
 
-	ab = head->elt;
+	f_c = head->elt;
 	head = head->next;
-	ac = head->elt;
-	return (ab / ac);
+	f_b = head->elt;
+	return (f_c / f_b);
 }
 
 /**
@@ -24,19 +24,19 @@ double gold_number(t_cell *head)
 t_cell *Fibonnaci()
 {
 	t_cell *head = NULL, *new;
-	int ab = 0, ac = 1, cd = 0, de = 20;
+	int f_a = 0, f_c = 1, f_b = 0, lim = 20;
 
-	while (de)
+	while (lim)
 	{
-		ab = ac + cd;
+		f_a = f_c + f_b;
 
 		new = malloc(sizeof(t_cell));
-		new->elt = ac;
+		new->elt = f_c;
 		new->next = head;
 		head = new;
-		ab = ac;
-		ac = ab;
-		de--;
+		f_b = f_c;
+		f_c = f_a;
+		lim--;
 	}
 	return (head);
 }
